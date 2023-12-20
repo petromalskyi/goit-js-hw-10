@@ -1,6 +1,9 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 
+import 'izitoast/dist/css/iziToast.min.css';
+import iziToast from 'izitoast/dist/js/iziToast.min.js';
+
 const btnEl = document.querySelector('button[data-start]');
 const inputEl = document.querySelector('#datetime-picker');
 
@@ -26,17 +29,17 @@ const options = {
 
     if (endTime > Date.now()) {
       btnEl.removeAttribute('disabled');
-      inputEl.value = dateTime.selectedDates[0];
-      console.log(selectedDates[0]);
     } else {
       btnEl.setAttribute('disabled', '');
-      // izitoast.show({
-      //   title: 'Error',
-      //   color: red,
-      //   message: 'Please choose a date in the future',
-      // });
-
-      alert('Please choose a date in the future'); /// треба підключити бібліотеку
+      iziToast.error({
+        title: 'Error',
+        message: 'Please choose a date in the future',
+        position: 'topRight',
+        messageColor: '#ffffff',
+        titleColor: '#ffffff',
+        iconColor: '#ffffff',
+        backgroundColor: '#B51B1B',
+      });
     }
   },
 };
@@ -46,8 +49,6 @@ btnEl.addEventListener('click', onClick);
 function onClick(event) {
   startTime = Date.now();
   btnEl.setAttribute('disabled', '');
-
-  console.log('click', dateTime.selectedDates[0]);
 
   let differenceOfTime = endTime - startTime;
 
