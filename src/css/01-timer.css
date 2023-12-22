@@ -1,9 +1,8 @@
 @import url('./reset.css');
 
 .box {
-  margin-top: 40px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 36px;
+  margin-left: 156px;
   display: flex;
   justify-content: space-between;
   max-width: 355px;
@@ -63,8 +62,7 @@ button:hover {
 
 .timer {
   margin-top: 32px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 156px;
   display: flex;
   justify-content: space-around;
   gap: 24px;
