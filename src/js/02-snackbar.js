@@ -2,7 +2,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 import iziToast from 'izitoast/dist/js/iziToast.min.js';
 
 const formEl = document.querySelector('form');
-
 formEl.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
