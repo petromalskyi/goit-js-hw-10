@@ -70,3 +70,7 @@ button {
   color: #ffffff;
   font-weight: 500;
 }
+
+button:hover {
+    background-color: #6C8CFF;
+}
